@@ -1,0 +1,112 @@
+/* Shared colours make the design easy to change in one place. */
+:root { --ink:#101820; --blue:#005baa; --paper:#f4f5f6; --accent:#e9fb75; }
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
+body { font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:var(--paper); }
+a { color:var(--blue); } a:focus-visible,button:focus-visible { outline:3px solid #1685ef; outline-offset:5px; }
+.skip-link { position:fixed; top:-70px; left:15px; z-index:1100; background:white; padding:12px; }.skip-link:focus { top:10px; }
+.navbar { background:#101820f5; min-height:80px; border-bottom:1px solid #ffffff25; }.navbar-brand img { object-fit:contain; }.nav-link { font-size:14px; }.nav-note { font-size:9px; letter-spacing:1.5px; color:#adb6bf; }
+/* Sticky keeps the scene visible while the parent section scrolls. */
+.hero-scroll { height:280vh; background:var(--ink); }.hero-scene { position:sticky; top:0; height:100vh; height:100svh; overflow:hidden; color:white; }
+#hero-frame { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }.hero-shade { position:absolute; inset:0; background:linear-gradient(90deg,#07121bd9, #07121b24 80%),linear-gradient(0deg,#07121b9e,transparent 50%); }
+.hero-copy { position:relative; padding-top:max(150px,22vh); }.eyebrow { font-size:11px; font-weight:700; letter-spacing:2px; margin-bottom:24px; }.hero-copy .eyebrow { color:var(--accent); }
+h1 { font-size:clamp(58px,7.6vw,110px); font-weight:800; line-height:.98; letter-spacing:-5px; margin-bottom:28px; }h1 span { color:var(--accent); }.hero-copy>p:not(.eyebrow) { color:#d8dfe5; line-height:1.8; }
+.btn { border-radius:0; padding:14px 22px; font-weight:700; font-size:13px; }.btn-ride { background:var(--accent); color:var(--ink); margin-top:18px; }.btn-ride:hover { background:white; }.btn-ride span { margin-left:20px; }
+.hero-bottom { position:absolute; bottom:40px; left:0; right:0; display:flex; justify-content:space-between; font-size:10px; letter-spacing:2px; }.film-track { position:absolute; bottom:0; width:100%; height:3px; background:#ffffff30; }#film-progress { width:0; height:100%; background:var(--accent); }
+.section-space { padding:100px 0; }.section-heading { display:flex; justify-content:space-between; align-items:flex-end; gap:30px; margin-bottom:48px; }.section-heading>p { color:#606c77; font-size:14px; line-height:1.8; }
+h2 { font-size:clamp(38px,4.5vw,60px); letter-spacing:-2px; line-height:1.05; font-weight:750; }h3 { font-size:25px; font-weight:700; letter-spacing:-.7px; }
+/* Two simple hover effects: lift the card and gently enlarge its image. */
+.bike-card { border:1px solid #e1e4e8; border-radius:0; overflow:hidden; transition:transform .25s,box-shadow .25s; }.bike-card:hover { transform:translateY(-7px); box-shadow:0 18px 30px #132e4812; }.bike-image { background:#e9edf0; height:240px; position:relative; overflow:hidden; }.bike-image img { width:100%; height:100%; object-fit:contain; transition:transform .4s; }.bike-card:hover img { transform:scale(1.05); }.bike-number { position:absolute; top:15px; left:20px; color:#52616b; font-size:11px; z-index:1; }.card-body { padding:28px; display:flex; flex-direction:column; }.card-body .eyebrow { color:var(--blue); margin-bottom:12px; font-size:9px; }.card-body>p:not(.eyebrow) { font-size:14px; color:#65707a; line-height:1.8; margin:14px 0 26px; }.card-body>a { margin-top:auto; padding-top:18px; border-top:1px solid #e3e6e9; text-decoration:none; font-size:12px; font-weight:700; display:flex; justify-content:space-between; }.image-note { font-size:11px; color:#66727d; margin-top:25px; }
+.about-section { background:var(--ink); color:white; }.about-section .eyebrow { color:var(--accent); }.about-section p:not(.eyebrow) { color:#b9c4ce; line-height:1.8; }.about-section .about-lead { color:white!important; font-size:23px; }.text-link { color:var(--accent); text-underline-offset:6px; font-size:13px; }
+.form-label { font-size:12px; font-weight:bold; }.form-control { border-radius:0; background:white; padding:14px; border-color:#d3dae0; }.form-control:focus { box-shadow:0 0 0 3px #005baa22; border-color:var(--blue); }footer { background:#e7ebee; padding:30px 0; font-size:10px; color:#52616b; }footer a { color:inherit; }.footer-divider { margin:0 12px; }
+/* Small screens use smaller spacing and more visible background framing. */
+@media(max-width:767px) { .navbar { min-height:72px; }.navbar-collapse { padding:18px 0; }.nav-note { display:block; margin-top:12px; }.hero-copy { padding-top:26vh; }h1 { letter-spacing:-3px; }.hero-copy>p:not(.eyebrow) { font-size:14px; }.hero-copy .eyebrow { font-size:9px; letter-spacing:1px; }#hero-frame { object-position:58% center; }.hero-shade { background:linear-gradient(90deg,#07121be0,#07121b55); }.section-space { padding:65px 0; }.section-heading { display:block; }.section-heading>p { margin-top:25px; }.bike-image { height:260px; } }
+/* Respect visitors who prefer less motion. JavaScript also keeps one film frame. */
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }.hero-scroll { height:100svh; }*,*::before,*::after { transition:none!important; animation:none!important; } }
+/* The history button is on its own line below the motorcycle button. */
+.btn-story { display:table; color:white; border:1px solid #ffffff70; margin-top:12px; padding:11px 20px; background:#10182055; }.btn-story:hover { background:white; color:var(--ink); }.btn-story span { margin-left:20px; }
+.history-section { background:#e9edf0; }.history-intro { max-width:850px; font-size:19px; line-height:1.8; margin-bottom:45px; }.history-subtitle { margin:55px 0 28px; }.person-card { background:white; border:1px solid #d9e0e5; }.person-card img { width:100%; height:260px; object-fit:cover; object-position:top; background:#d7dee4; }.person-copy { padding:22px; }.person-copy h4 { font-size:22px; font-weight:700; }.person-role { color:var(--blue); font-size:10px; line-height:1.7; font-weight:bold; letter-spacing:.7px; }.person-copy>p:last-child { font-size:13px; line-height:1.8; color:#5a6874; margin-bottom:0; }.source-line { font-size:11px; line-height:2; margin-top:20px; color:#596874; }
+.history-timeline { list-style:none; margin:0; padding:0; max-width:950px; }.history-timeline li { display:flex; gap:35px; padding:26px 0; border-bottom:1px solid #cbd4dc; }.history-timeline li>span { flex:0 0 115px; font-size:20px; color:var(--blue); font-weight:700; }.history-timeline h4 { font-size:21px; font-weight:bold; }.history-timeline p { color:#53616d; line-height:1.8; margin:8px 0 0; font-size:14px; }.demerger-intro { margin-top:65px; max-width:900px; }.demerger-intro>p:last-child { line-height:1.9; font-size:15px; color:#53616d; }.company-branches { margin-top:8px; }.company-branches article { background:var(--ink); color:white; padding:30px; height:100%; border-top:4px solid var(--accent); }.company-branches span { font-size:10px; color:var(--accent); letter-spacing:1px; }.company-branches h4 { font-size:25px; margin-top:20px; }.company-branches p { color:#bcc8d2; font-size:14px; line-height:1.8; margin-top:18px; }.company-branches a { color:var(--accent); font-size:12px; }.finance-explainer { margin-top:30px; padding:30px; background:#dce4eb; line-height:1.9; font-size:14px; }.finance-explainer h4 { font-size:22px; font-weight:bold; }.leadership-heading { margin-top:70px; }.leadership-sources { border-top:1px solid #cbd4dc; margin-top:35px; padding-top:25px; font-size:13px; line-height:2; }.leadership-sources h4 { font-size:18px; }
+@media(max-width:767px) { .history-intro { font-size:16px; }.history-timeline li { gap:15px; }.history-timeline li>span { flex-basis:85px; font-size:16px; }.history-timeline h4 { font-size:18px; }.person-card img { height:300px; }.hero-copy { padding-top:max(125px,20vh); }.btn-story { font-size:12px; }.finance-explainer { padding:22px; } }
+@media(max-height:650px) { .hero-copy { padding-top:110px; }h1 { font-size:55px; margin-bottom:15px; }.hero-copy .eyebrow { margin-bottom:12px; }.hero-copy>p:not(.eyebrow) { line-height:1.4; }.hero-bottom { bottom:16px; }.btn-ride { margin-top:0; } }
+
+/* A central line forms the path. Each list item owns a connector and a dot. */
+.foundation-note { color:#596874; font-size:14px; margin-bottom:35px; }
+.foundation-path { position:relative; list-style:none; padding:10px 0; margin:0; }
+.foundation-path::before { content:""; position:absolute; width:3px; background:#9cb3c7; top:0; bottom:0; left:50%; transform:translateX(-50%); }
+.foundation-step { position:relative; width:50%; padding-right:42px; margin-bottom:35px; }
+/* nth-child(even) selects the second, fourth, and other even items. */
+.foundation-step:nth-child(even) { margin-left:50%; padding-right:0; padding-left:42px; }
+.foundation-step:last-child { margin-bottom:0; }
+.foundation-step::before { content:""; position:absolute; height:3px; width:42px; background:#9cb3c7; right:0; top:70px; }
+.foundation-step::after { content:""; position:absolute; width:15px; height:15px; border-radius:50%; background:var(--blue); border:3px solid #e9edf0; right:-7.5px; top:64px; }
+.foundation-step:nth-child(even)::before { right:auto; left:0; }
+.foundation-step:nth-child(even)::after { right:auto; left:-7.5px; }
+.foundation-card { display:flex; overflow:hidden; border-top:3px solid var(--blue); box-shadow:0 8px 25px #10283b0a; }
+.foundation-card img { width:35%; height:auto; min-height:235px; object-fit:cover; object-position:center top; }
+.foundation-card .person-copy { flex:1; padding:24px 20px; }
+.foundation-card h4 { font-size:23px; }
+/* JavaScript adds path-animated only when it can reveal the cards. */
+.path-animated .foundation-card { opacity:0; transform:translateY(25px); transition:opacity .65s ease,transform .65s ease; }
+.path-animated .foundation-step.is-visible .foundation-card { opacity:1; transform:translateY(0); }
+/* Phones use one path at the left, with all cards to its right. */
+@media(max-width:767px) {
+  .foundation-path::before { left:8px; }
+  .foundation-step,.foundation-step:nth-child(even) { width:100%; margin-left:0; padding:0 0 0 36px; }
+  .foundation-step::before,.foundation-step:nth-child(even)::before { left:8px; right:auto; width:28px; }
+  .foundation-step::after,.foundation-step:nth-child(even)::after { left:.5px; right:auto; }
+  .foundation-card { display:block; }
+  .foundation-card img { width:100%; height:220px; min-height:0; object-position:center 20%; }
+  .foundation-card .person-copy { padding:22px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .path-animated .foundation-card { opacity:1; transform:none; transition:none; }
+}
+
+/* Shared feedback: keyboard users get the same emphasis as mouse users. */
+.nav-link,.navbar-brand,.btn,.text-link,.source-line a,
+.leadership-sources a,.finance-explainer a,footer a,
+.company-branches a,.form-control { transition:color .2s,background-color .2s,border-color .2s,box-shadow .2s,transform .2s; }
+.nav-link:focus-visible { color:var(--accent); }
+.btn:focus-visible { box-shadow:0 5px 15px #005baa30; }
+.person-card:focus-within,.company-branches article:focus-within {
+  box-shadow:0 12px 25px #10283b20;
+}
+/* Only devices with a real hover pointer get movement effects.
+   This prevents sticky hover states after tapping on a phone. */
+@media(hover:hover) and (pointer:fine) {
+  .navbar-brand:hover { transform:scale(1.04); }
+  .nav-link:hover { color:var(--accent); transform:translateY(-2px); }
+  .btn:hover { transform:translateY(-3px); box-shadow:0 8px 20px #00000020; }
+  .btn-dark:hover { background:var(--blue); border-color:var(--blue); }
+
+  /* Portraits brighten gently; the card rises a little. */
+  .person-card { transition:box-shadow .25s,border-color .25s; overflow:hidden; }
+  .person-card img { transition:filter .3s; }
+  .person-card:hover { border-color:var(--blue); box-shadow:0 12px 25px #10283b20; }
+  .person-card:hover img { filter:brightness(1.06); }
+  /* Keep the foundation reveal animation on its own element. */
+  .foundation-step { transition:filter .25s; }
+  .foundation-step:hover { filter:drop-shadow(0 7px 8px #10283b12); }
+  .foundation-step::after { transition:background-color .25s,box-shadow .25s; }
+  .foundation-step:hover::after { background:#1685ef; box-shadow:0 0 0 5px #005baa20; }
+
+  .company-branches article { transition:transform .25s,box-shadow .25s; }
+  .company-branches article:hover { transform:translateY(-5px); box-shadow:0 14px 25px #10283b25; }
+  .history-timeline li { transition:background-color .25s; }
+  .history-timeline li:hover { background:#ffffff70; }
+  .history-timeline li>span { transition:color .25s; }
+  .history-timeline li:hover>span { color:#003d75; }
+
+  .source-line a:hover,.leadership-sources a:hover,.finance-explainer a:hover,
+  footer a:hover { color:#003d75; text-decoration-thickness:2px; text-underline-offset:4px; }
+  .text-link:hover,.company-branches a:hover { color:white; text-underline-offset:5px; }
+  .card-body>a:hover { color:#003d75; }
+  .form-control:hover:not(:focus) { border-color:var(--blue); background:#fbfdff; }
+}
+/* Keep hover feedback but remove movement when reduced motion is requested. */
+@media(prefers-reduced-motion:reduce) {
+  .navbar-brand:hover,.nav-link:hover,.btn:hover,
+  .company-branches article:hover,.bike-card:hover,.bike-card:hover img {
+    transform:none;
+  }
+}
